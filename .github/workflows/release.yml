@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build app for release
+        run: msbuild instagib.sln -t:Rebuild -p:Configuration=Release -p:Platform=x86
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Release/instagib.dll
