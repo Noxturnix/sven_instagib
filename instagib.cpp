@@ -69,14 +69,28 @@ void CInstaGib::GameFrame(client_state_t state, double frametime, bool bPostRunC
 {
 }
 
-PLUGIN_RESULT CInstaGib::Draw(void)
+void CInstaGib::Draw(void)
 {
-	return PLUGIN_CONTINUE;
 }
 
-PLUGIN_RESULT CInstaGib::DrawHUD(float time, int intermission)
+void CInstaGib::DrawHUD(float time, int intermission)
 {
-	return PLUGIN_CONTINUE;
+}
+
+void CInstaGib::OnFirstClientdataReceived(client_data_t* pcldata, float flTime)
+{
+}
+
+void CInstaGib::OnBeginLoading(void)
+{
+}
+
+void CInstaGib::OnEndLoading(void)
+{
+}
+
+void CInstaGib::OnDisconnect(void)
+{
 }
 
 const char* CInstaGib::GetName(void)

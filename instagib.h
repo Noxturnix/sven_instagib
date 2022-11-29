@@ -24,9 +24,17 @@ public:
 
 	virtual void GameFrame(client_state_t state, double frametime, bool bPostRunCmd);
 
-	virtual PLUGIN_RESULT Draw(void);
+	virtual void Draw(void);
 
-	virtual PLUGIN_RESULT DrawHUD(float time, int intermission);
+	virtual void DrawHUD(float time, int intermission);
+
+	virtual void OnFirstClientdataReceived(client_data_t* pcldata, float flTime);
+
+	virtual void OnBeginLoading(void);
+
+	virtual void OnEndLoading(void);
+
+	virtual void OnDisconnect(void);
 
 	virtual const char* GetName(void);
 
